@@ -1,13 +1,61 @@
+---
+const pageTitle= 'About Me';
 
+const me = {
+  firstName: 'V',
+  country: 'NZ',
+  occupation:'Student',
+  hobbies:['Illustration', 'Programming', 'Cooking and Baking']
+};
 
+const skills= ['HTML','CSS','JavaScript', 'React', 'Astro',]
 
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+const happy = true;
+const finished = false;
+const goal = 3;
+---
 
-<body>
-  <h1>About Me</h1>
-  <h2>... and my new Astro site!</h2>
-  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself! </p>
-  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going! </p>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+
+    <h1>{pageTitle}</h1>
+    <h2>... and my new Astro site!</h2>
+    <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself! </p>
+
+    <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going! </p>
+
+    <p>Here are a few facts about me:</p>
+
+    <ul>
+      <li>My name is {me.firstName} </li>
+      <li> I live in {me.country} and I am a {me.occupation}  </li>
+      </ul>
+
+      <p>My hobbies are : </p>
+      <ul>
+        {me.hobbies.map((skill)=><li> {skill} </li>)}
+      </ul>
+
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill)=><li> {skill} </li>)}
+    </ul>
+
+      <!-- if happy is true then execute "<p> I am happy...<p>" -->
+      {happy && <p>I am happy to be learning Astro!</p>}  
+      {finished && <p>I finsihed this tutorial! </p> }
+      <!-- if goal is 3 then exectue 'first p-tag' else execute 'second p-tag' -->
+      {goal===3 ? <p>My goal is to finish in 3 days,</p> : <p>My goal is not 3 days.</p>}
+
+  </body>
+</html>
+
