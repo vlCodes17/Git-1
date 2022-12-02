@@ -14,8 +14,8 @@ const skills= ['HTML','CSS','JavaScript', 'React', 'Astro',]
 const happy = true;
 const finished = false;
 const goal = 3;
-const skillColor = 'navy'
-const fontWeight= 'bold '
+const skillColor = ''
+const fontWeight= 'bold'
 const textCase= 'uppercase'
 ---
 
@@ -26,18 +26,7 @@ const textCase= 'uppercase'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{pageTitle}</title>
 
-    <style define:vars= {{skillColor, fontWeight, textCase}}>
-      h1{
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill{
-        color: green;
-        color: var( --skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
+
 
   </head>
   <body>
@@ -77,3 +66,18 @@ const textCase= 'uppercase'
   </body>
 </html>
 
+<!-- STYLES -->
+
+<style define:vars= {{skillColor, fontWeight, textCase}}>
+
+  h1{
+    
+    font-size: 4rem;
+  }
+  .skill{
+    color: green;
+    color: var(--header-color);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
