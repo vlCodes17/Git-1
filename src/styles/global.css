@@ -6,7 +6,7 @@
   --text-color: #e6bccdff;
   --old-gold: #d2bf55ff;
   --pumpkin: #fe7f2dff;
-  --floral-white: #fff9ecff;
+  --link-color: #fff9ecff;
 }
 
 html {
@@ -39,15 +39,51 @@ a {
 }
 
 a:link {
-  color: var(--pumpkin);
+  color: var(--link-color);
 }
 
-a:visited {
+a:hover {
   color: var(--old-gold);
 }
-a:hover {
-  text-decoration: underline;
+
+/* nav styles  */
+.nav-links {
+  width: 100%;
+  top: 5rem;
+  left: 48px;
+  background: color #ff9776;
+  display: none;
+  margin: 0;
 }
-a:active {
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
   font-weight: bold;
+  text-transform: uppercase;
+}
+.nav-links a:hover,
+afocus {
+  background-color: #ff9776;
+}
+
+.expanded {
+  display: unset;
+}
+@media screen and (min-width: 636px) {
+  .nav-links {
+    margin: 5rem;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
 }
