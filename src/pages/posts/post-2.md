@@ -9,7 +9,7 @@ image:
 pubDate: 12-02-2022
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---
-# What I've Learned Today 
+## What I've Learned Today 
 Awaiting day 2 content
 
-# What's Next
+## What's Next

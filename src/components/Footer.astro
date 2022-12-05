@@ -1,22 +1,19 @@
 ---
 import Social from "./Social.astro";
-const platform='github';
-const username ='withastro';
-
+const platform = "github";
+const username = "withastro";
 ---
-<footer  class="nav-links">
-<Social platform='instagram' username='astro.glob'/>
-<Social platform='github' username='vlcodes17'/>
-<Social platform='youtube' username='astrodotbuild'/>
-  
+
+<footer class="nav-links">
+  <Social platform="instagram" username="astro.glob" />
+  <Social platform="github" username="vlcodes17" />
+  <Social platform="youtube" username="astrodotbuild" />
 </footer>
 
-
 <style>
-  footer{
-    display:flex;
-    justify-content: space-between;
-    gap: 1rem;
+  footer {
+    display: flex;
+    gap: 0.5rem;
     margin-top: 2rem;
   }
 </style>
