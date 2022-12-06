@@ -2,30 +2,37 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 
+// I DONT UNDERSTAND ANY OF THIS!!! //
 export async function getStaticPaths() {
+  //Wait, i think i get this much: This will grab all the data from our posts.md files// 
   const allPosts = await Astro.glob("../posts/*.md");
-  return [
-    {params: {tag: "astro"}, props: {posts: allPosts}},
-    {params: {tag: "successes"}, props: {posts: allPosts}},
-    {params: {tag: "community"}, props: {posts: allPosts}},
-    {params: {tag: "blogging"}, props: {posts: allPosts}},
-    {params: {tag: "setbacks"}, props: {posts: allPosts}},
-    {params: {tag: "learning in public"}, props: {posts: allPosts}}
+
+  // filters through each post.md tags and creates a new, single, larger array, then 'set' will remove repeated values and return a new array of all tags...this is so we can use this array to display a list of tags on our page //
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
   ];
+  //WTF?//
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.frontmatter.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
 }
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const filteredPosts = posts.filter((post) =>
-  post.frontmatter.tags.includes(tag)
-);
+
 ---
 
 <BaseLayout pageTitle={tag}>
   <p>Posts tagged with {tag}</p>
   <ul>
     {
-      filteredPosts.map((post) => (
+      posts.map((post) => (
         <BlogPost url={post.url} title={post.frontmatter.title} />
       ))
     }
