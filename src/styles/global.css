@@ -8,14 +8,23 @@
   --pumpkin: #fe7f2dff;
   --link-color: #fff9ecff;
 }
-
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/public/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+    url("/public/fonts/Mona-Sans.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-style: UltraLight Narrow ;
+}
 html {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: sans-serif;
+  font-family: "Mona Sans";
+  font-weight: 200;
 }
 
 body {
+
   margin: 0 auto;
   width: 100%;
   max-width: 80ch;
@@ -32,11 +41,9 @@ h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
 }
-h2{
+h2 {
   color: var(--bold-color);
-  
 }
-
 
 /* nav styles  */
 .hamburger {
@@ -69,9 +76,10 @@ h2{
   font-weight: bold;
   text-transform: uppercase;
 }
-.nav-links a:hover,a:focus {
-  background-color: #ff9776;
-  color: var(--header-color);
+.nav-links a:hover,
+a:focus {
+  color: #ff9776;
+  
 }
 
 .expanded {
