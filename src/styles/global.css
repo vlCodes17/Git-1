@@ -43,11 +43,13 @@ h1 {
 
 /* nav styles  */
 .hamburger {
+  
   padding-right: 20px;
   cursor: pointer;
 }
 
 .hamburger .line {
+  background-color:#7B6D8D;
   display: block;
   width: 40px;
   height: 5px;
